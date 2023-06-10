@@ -44,16 +44,16 @@
     font-size: 17px;
   }
   .coin-price {
-    width: 110px;
+    width: 90px;
  
   }
   
   .coin-volume {
-    width: 155px;
+    width: 190px;
   }
   
   .coin-marketcap {
-    width: 230px;
+    width: 260px;
   }
   
   .coin-percent {

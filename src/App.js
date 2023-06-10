@@ -54,12 +54,13 @@ function App() {
   return (
     // <div className={theme}>
       <div className={`coin-app ${theme}`}>
-      <div className="form-check form-switch ">
-      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
+        <div className="outl">
+        <div className="form-check form-switch ">
+      <label className="form-check-labe don" htmlFor="flexSwitchCheckDefault">
   {/* < i class="fa-regular fa-lightbulb" /> */}
   dark
   </label>
-  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onChan={toggleTheme}/>
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onChange={toggleTheme}/>
   {/* onchange kr skte ho */}
   <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
   {/* < i class="fa-regular fa-lightbulb" /> */}
@@ -68,6 +69,8 @@ function App() {
  
   
 </div>
+        </div>
+      
       <div className="coin-search">
         <h1 className="coin-text">
           Search a CyptoCurrency 
