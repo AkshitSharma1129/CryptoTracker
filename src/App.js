@@ -16,7 +16,6 @@ function App() {
   //         console.log(error);
   //       }
   //     };
-  
   //     fetchData();
   //   }, []);
 
@@ -40,8 +39,35 @@ function App() {
     const filteredCoins = coins.filter(coin=>coin.name.toLowerCase().includes(search.toLowerCase()));
     // coin is defined here
 
+    const [theme, setTheme] = useState('dark');
+    const toggleTheme = () => {
+      if (theme === 'light') {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    };
+    useEffect(() => {
+      document.body.className = theme;
+    }, [theme]);
+
   return (
-    <div className="coin-app">
+    // <div className={theme}>
+      <div className={`coin-app ${theme}`}>
+      <div className="form-check form-switch ">
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
+  {/* < i class="fa-regular fa-lightbulb" /> */}
+  dark
+  </label>
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onChan={toggleTheme}/>
+  {/* onchange kr skte ho */}
+  <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
+  {/* < i class="fa-regular fa-lightbulb" /> */}
+  light
+  </label>
+ 
+  
+</div>
       <div className="coin-search">
         <h1 className="coin-text">
           Search a CyptoCurrency 
@@ -61,9 +87,11 @@ function App() {
             volume={coin.total_volume}
             priceChange = {coin.price_change_percentage_24h}
             marketcap={coin.market_cap}
-            />);
-      })};
+            />)
+      })}
     </div>
+    // </div>
+    
   );
 }
 
