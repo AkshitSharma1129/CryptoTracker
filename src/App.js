@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Coin from './Components/Coin';
+import ParticlesBackground from './Components/ParticlesBackground';
 function App() {
   // // step 1 create useEffect
   // const MyComponent = () => {
@@ -54,6 +55,7 @@ function App() {
   return (
     // <div className={theme}>
       <div className={`coin-app ${theme}`}>
+        <ParticlesBackground />
         <div className="outl">
         <div className="form-check form-switch ">
       <label className="form-check-labe don" htmlFor="flexSwitchCheckDefault">
@@ -70,7 +72,7 @@ function App() {
   
 </div>
         </div>
-      
+        <ParticlesBackground />
       <div className="coin-search">
         <h1 className="coin-text">
           Search a CyptoCurrency 
@@ -80,7 +82,9 @@ function App() {
         </form>
       </div>
       {filteredCoins.map(coin=>{
+        <ParticlesBackground />
         return (
+          
           <Coin 
             key = {coin.id}
             name = {coin.name}
